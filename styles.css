@@ -34,7 +34,7 @@ a {
 }
 
 .shell {
-  width: min(760px, calc(100% - 32px));
+  width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
 }
 
@@ -92,6 +92,66 @@ main {
   box-shadow: var(--shadow);
   backdrop-filter: blur(20px);
 }
+
+.compatibility {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.section {
+  margin-top: 28px;
+  padding: 44px 48px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.section h2 {
+  max-width: 720px;
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.steps article {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.steps span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+}
+
+.steps h3 { margin: 18px 0 8px; }
+.steps p, .feature-list, .faq p { color: var(--muted); line-height: 1.65; }
+.steps p { margin: 0; }
+.split { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; align-items: start; }
+.compact { font-size: 1rem; }
+.feature-list { margin: 0; padding-left: 22px; }
+.feature-list li + li { margin-top: 12px; }
+.faq details { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 0; }
+.faq summary { cursor: pointer; font-weight: 700; }
+.faq details p { margin-bottom: 0; }
 
 .eyebrow {
   margin: 0 0 12px;
@@ -194,6 +254,7 @@ footer {
   }
 
   .hero,
+  .section,
   .document {
     padding: 32px 24px;
     border-radius: 20px;
@@ -202,6 +263,8 @@ footer {
   main {
     padding-top: 24px;
   }
+
+  .grid, .split { grid-template-columns: 1fr; }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -229,4 +292,6 @@ footer {
     background: #457cf0;
     color: #fff;
   }
+
+  .steps article { background: rgba(255, 255, 255, 0.035); }
 }
